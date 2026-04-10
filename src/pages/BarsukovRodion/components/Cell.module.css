@@ -1,0 +1,78 @@
+.cell {
+    box-sizing: border-box;
+    width: 32px;
+    height: 32px;
+    font-family: "Roboto Mono", Consolas, monospace;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+.closed {
+    background: #4a4a4a;
+    border: 3px solid;
+    border-color: #7a7a7a #222 #222 #7a7a7a;
+}
+.open {
+    background: #262626;
+    border: 1px solid #1a1a1a;
+    font-weight: bold;
+}
+.flag,
+.flagWrong {
+    background: #4a4a4a;
+}
+.flag {
+    border: 3px solid;
+    border-color: #7a7a7a #222 #222 #7a7a7a;
+}
+.flag::before,
+.flagWrong::before {
+    content: "🚩";
+    font-size: 16px;
+}
+.flagWrong {
+    border: 1px solid #ff4444;
+    position: relative;
+}
+.flagWrong::after {
+    content: "❌";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: red;
+    opacity: 0.8;
+}
+.mine,
+.exploded {
+    border: 1px solid #1a1a1a;
+}
+.mine::before,
+.exploded::before {
+    content: "💣";
+    font-size: 18px;
+}
+.mine { background: #262626; }
+.exploded { background: #ff4444; }
+
+.number1 { color: #4da6ff; }
+.number2 { color: #66cc66; }
+.number3 { color: #ff6666; }
+.number4 { color: #9966ff; }
+.number5 { color: #ff9933; }
+.number6 { color: #33cccc; }
+.number7 { color: #cc66ff; }
+.number8 { color: #ff3399; }
+
+@media (max-width: 480px) {
+    .cell {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+    }
+}

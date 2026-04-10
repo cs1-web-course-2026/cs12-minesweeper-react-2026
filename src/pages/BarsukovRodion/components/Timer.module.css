@@ -1,0 +1,10 @@
+.value {
+    font-family: "Roboto Mono", Consolas, monospace;
+    font-size: 20px;
+    padding: 4px 8px;
+    background: #111;
+    color: #ff3333;
+    border: 1px solid #555;
+    min-width: 60px;
+    text-align: center;
+}
