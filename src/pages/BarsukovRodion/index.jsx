@@ -1,5 +1,4 @@
 import React, { useCallback } from 'react';
-import { GAME_STATUS, CELL_CONTENT, CELL_STATE } from './constants.js';
 import { useGameState } from './hooks/useGameState.js';
 
 import Board from './components/Board.jsx';
