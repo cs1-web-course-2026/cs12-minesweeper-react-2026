@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { CELL_STATE, CELL_CONTENT } from '../constants.js';
 import styles from './Cell.module.css';
 
-const Cell = memo(({ rowIdx, colIdx, cell, onClick, onContextMenu }) => {
+const Cell = memo(({ row, col, cell, onClick, onContextMenu }) => {
     let className = styles.cell;
     let content = null;
 
@@ -27,17 +27,18 @@ const Cell = memo(({ rowIdx, colIdx, cell, onClick, onContextMenu }) => {
         }
     }
 
+    const label = `Row ${row + 1}, column ${col + 1}, ${cell.state}`;
+
     return (
-        <div
+        <button
+            type="button"
             className={className}
-            role="gridcell"
-            tabIndex={0}
-            aria-label={`Cell ${rowIdx}, ${colIdx}`}
-            onClick={() => onClick(rowIdx, colIdx)}
-            onContextMenu={(e) => onContextMenu(e, rowIdx, colIdx)}
+            aria-label={label}
+            onClick={() => onClick(row, col)}
+            onContextMenu={(event) => onContextMenu(event, row, col)}
         >
             {content}
-        </div>
+        </button>
     );
 });
 

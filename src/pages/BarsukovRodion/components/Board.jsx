@@ -13,13 +13,13 @@ export default function Board({ field, onCellClick, onCellContextMenu }) {
             aria-rowcount={rows}
             aria-colcount={cols}
         >
-            {field.map((row, r) => (
-                <div key={r} className={styles.row} role="row">
-                    {row.map((cell, c) => (
+            {field.map((boardRow, row) => (
+                <div key={row} className={styles.row} role="row">
+                    {boardRow.map((cell, col) => (
                         <Cell
-                            key={`${r}-${c}`}
-                            rowIdx={r}
-                            colIdx={c}
+                            key={`${row}-${col}`}
+                            row={row}
+                            col={col}
                             cell={cell}
                             onClick={onCellClick}
                             onContextMenu={onCellContextMenu}

@@ -1,5 +1,7 @@
 .cell {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
     width: 32px;
     height: 32px;
     font-family: "Roboto Mono", Consolas, monospace;
@@ -9,6 +11,9 @@
     justify-content: center;
     cursor: pointer;
     user-select: none;
+    color: inherit;
+    background: transparent;
+    outline: none;
 }
 .closed {
     background: #4a4a4a;
