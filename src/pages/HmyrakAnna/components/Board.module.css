@@ -1,6 +1,7 @@
 .board {
+  --board-cell-size: 31px;
   display: inline-grid;
-  grid-template-columns: repeat(var(--board-cols), 31px);
+  grid-template-columns: repeat(var(--board-cols), var(--board-cell-size));
   gap: 0;
   padding: 0;
   background-color: rgb(189, 187, 187);

@@ -32,10 +32,10 @@ function Game() {
     },
     {
       id: 2,
-      title: "Hmyrak Anna's Minesweeper",
-      description: "A fully functional minesweeper implementation with component-based architecture, multiple difficulty levels, timer, and complete game mechanics.",
-      author: "Hmyrak Anna",
-      link: "/hmyrak-anna",
+      title: "Basic Minesweeper",
+      description: "A simple implementation with basic game mechanics",
+      author: "Author Name",
+      link: "#",
       difficulty: "Beginner",
       status: "Complete"
     },
@@ -56,7 +56,16 @@ function Game() {
       link: "#",
       difficulty: "Advanced",
       status: "Planning"
-    }
+    },
+    {
+      id: 5,
+      title: "Hmyrak Anna's Minesweeper",
+      description: "A fully functional minesweeper implementation with component-based architecture, multiple difficulty levels, timer, and complete game mechanics.",
+      author: "Hmyrak Anna",
+      link: "/hmyrak-anna",
+      difficulty: "Beginner",
+      status: "Complete"
+    },
   ]
 
   return (

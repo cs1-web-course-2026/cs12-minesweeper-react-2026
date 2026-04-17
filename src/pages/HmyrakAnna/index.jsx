@@ -28,7 +28,6 @@ function Game() {
 
   const difficultyLevels = useMemo(() => Object.values(DIFFICULTY_LEVELS), []);
   const minesRemaining = state.difficulty.mineCount - state.flagsPlaced;
-  const boardPixelWidth = state.difficulty.cols * 31;
 
   const handleRestart = useCallback(() => {
     restartGame();
@@ -72,7 +71,12 @@ function Game() {
 
   return (
     <main className={styles.game}>
-      <section className={styles.titleContainer} style={{ '--board-px-width': `${boardPixelWidth}px` }}>
+      <section
+        className={styles.titleContainer}
+        style={{
+          '--board-cols': state.difficulty.cols,
+        }}
+      >
         <div className={styles.menuBar}>
           <RestartButton onClick={handleRestart} className={styles.menuItem} />
           <button type="button" className={styles.menuItem} onClick={handleOptions}>

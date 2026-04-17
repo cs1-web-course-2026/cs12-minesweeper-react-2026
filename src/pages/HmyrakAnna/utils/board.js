@@ -1,5 +1,9 @@
 import { CELL_STATE, CELL_CONTENT, DIRECTIONS } from '../constants';
 
+function cloneBoard(board) {
+  return board.map((row) => row.map((cell) => ({ ...cell })));
+}
+
 export function isInBounds(row, col, rows, cols) {
   return row >= 0 && row < rows && col >= 0 && col < cols;
 }
@@ -17,7 +21,7 @@ export function createEmptyBoard(rows, cols) {
 }
 
 export function placeMines(board, mineCount, rows, cols, excludeRow, excludeCol) {
-  const newBoard = board.map((row) => [...row]);
+  const newBoard = cloneBoard(board);
 
   const allowedPositions = [];
 
@@ -48,7 +52,7 @@ export function placeMines(board, mineCount, rows, cols, excludeRow, excludeCol)
 }
 
 export function calculateAdjacentMines(board, rows, cols) {
-  const newBoard = board.map((row) => [...row]);
+  const newBoard = cloneBoard(board);
 
   for (let row = 0; row < rows; row += 1) {
     for (let col = 0; col < cols; col += 1) {
@@ -100,10 +104,12 @@ export function toggleFlag(board, row, col) {
 export function floodFillReveal(board, row, col, rows, cols) {
   const newBoard = board.map((boardRow) => [...boardRow]);
   const queue = [[row, col]];
+  let queueIndex = 0;
   const visited = new Set();
 
-  while (queue.length > 0) {
-    const [currentRow, currentCol] = queue.shift();
+  while (queueIndex < queue.length) {
+    const [currentRow, currentCol] = queue[queueIndex];
+    queueIndex += 1;
     const key = `${currentRow}-${currentCol}`;
 
     if (visited.has(key)) {
