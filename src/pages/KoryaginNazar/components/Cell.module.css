@@ -1,0 +1,84 @@
+.cell {
+  box-sizing: border-box;
+  width: var(--cell-size);
+  height: var(--cell-size);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 0.4rem;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.1;
+  font-family: 'Trebuchet MS', 'Segoe UI', 'Noto Sans', sans-serif;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.08s ease, background-color 0.15s ease;
+}
+
+.cell:active {
+  transform: scale(0.96);
+}
+
+.closed {
+  background: linear-gradient(145deg, #f5fbff 0%, #d6e6f4 100%);
+  box-shadow:
+    inset 0 1px 0 #ffffff,
+    0 1px 0 rgb(27 40 58 / 20%);
+}
+
+.open {
+  background: #eef3f8;
+  box-shadow: inset 0 1px 2px rgb(16 25 40 / 15%);
+}
+
+.flagged {
+  background: linear-gradient(145deg, #fff4d8 0%, #ffe0b0 100%);
+}
+
+.mine {
+  background: linear-gradient(145deg, #f8d2d2 0%, #f3a8a8 100%);
+}
+
+.exploded {
+  background: linear-gradient(145deg, #f85f5f 0%, #d23131 100%);
+  color: #ffffff;
+}
+
+.wrongFlag {
+  box-shadow: inset 0 0 0 2px #d43737;
+}
+
+.value1 {
+  color: #2a6ee4;
+}
+
+.value2 {
+  color: #2f8f44;
+}
+
+.value3 {
+  color: #cc2a2a;
+}
+
+.value4 {
+  color: #6f46d4;
+}
+
+.value5 {
+  color: #ad5012;
+}
+
+.value6 {
+  color: #0d7f88;
+}
+
+.value7 {
+  color: #243042;
+}
+
+.value8 {
+  color: #6d6d6d;
+}

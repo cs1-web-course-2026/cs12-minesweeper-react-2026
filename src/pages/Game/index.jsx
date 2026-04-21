@@ -65,6 +65,15 @@ function Game() {
       link: "/barsukov-rodion",
       difficulty: "Intermediate",
       status: "Complete"
+    },
+    {
+      id: 6,
+      title: "Minesweeper by Koryagin Nazar",
+      description: "React implementation with component architecture and CSS Modules",
+      author: "Nazar Koryagin",
+      link: "/koryagin-nazar",
+      difficulty: "Intermediate",
+      status: "Complete"
     }
   ]
 
