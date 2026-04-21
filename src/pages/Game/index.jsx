@@ -61,6 +61,15 @@ function Game() {
     },
     {
       id: 5,
+      title: "Hmyrak Anna's Minesweeper",
+      description: "A fully functional minesweeper implementation with component-based architecture, multiple difficulty levels, timer, and complete game mechanics.",
+      author: "Hmyrak Anna",
+      link: "/hmyrak-anna",
+      difficulty: "Beginner",
+      status: "Complete"
+    },
+    {
+      id: 6,
       title: "Minesweeper on React",
       description: "Minesweeper Implementation on the React framework",
       author: "Rodion Barsukov",

@@ -1,0 +1,17 @@
+.statusMessage {
+  min-height: 24px;
+  margin-top: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+.won {
+  color: rgb(35, 163, 63);
+}
+
+.lost {
+  color: rgb(213, 5, 5);
+}
