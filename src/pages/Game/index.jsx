@@ -76,6 +76,15 @@ function Game() {
       link: "/barsukov-rodion",
       difficulty: "Intermediate",
       status: "Complete"
+    },
+    {
+      id: 7,
+      title: "React Minesweeper",
+      description: "Minesweeper Implementation on the React framework",
+      author: "Skripnik Dima",
+      link: "/skripnik-dima",
+      difficulty: "Intermediate",
+      status: "Complete"
     }
   ]
 
