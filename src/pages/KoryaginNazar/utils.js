@@ -169,7 +169,7 @@ export function countFlags(board) {
   return board.flat().filter((cell) => cell.state === CELL_STATE.FLAGGED).length
 }
 
-export function checkWinCondition(board, mineCount) {
+export function checkWinCondition(board) {
   const openSafeCells = board
     .flat()
     .filter(
@@ -178,8 +178,12 @@ export function checkWinCondition(board, mineCount) {
         cell.content !== CELL_CONTENT.MINE,
     ).length
 
+  const actualMineCount = board
+    .flat()
+    .filter((cell) => cell.content === CELL_CONTENT.MINE).length
+
   const totalCells = board.length * board[0].length
-  return openSafeCells === totalCells - mineCount
+  return openSafeCells === totalCells - actualMineCount
 }
 
 export function revealBoardAfterLoss(board) {

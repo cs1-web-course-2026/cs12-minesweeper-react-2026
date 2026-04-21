@@ -68,7 +68,7 @@ export function useGameState(config = DEFAULT_GAME_CONFIG) {
           }
         }
 
-        const hasWonGame = checkWinCondition(updatedBoard, config.mineCount)
+        const hasWonGame = checkWinCondition(updatedBoard)
         if (hasWonGame) {
           return {
             ...previousState,
