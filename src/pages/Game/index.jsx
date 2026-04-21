@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import styles from './Game.module.css'
 
 const STATUS_CLASS = {
@@ -90,9 +92,9 @@ function Game() {
             <p className={styles.description}>{impl.description}</p>
             <div className={styles.cardActions}>
               {impl.link.startsWith('/') ? (
-                <a href={impl.link} className={styles.linkBtn}>
+                <Link to={impl.link} className={styles.linkBtn}>
                   View Implementation →
-                </a>
+                </Link>
               ) : (
                 <a
                   href={impl.link}
