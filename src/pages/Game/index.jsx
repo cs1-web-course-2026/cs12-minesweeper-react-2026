@@ -80,7 +80,7 @@ function Game() {
     {
       id: 7,
       title: "React Minesweeper",
-      description: "Minesweeper Implementation on the React framework",
+      description: "Minesweeper adaptated to React",
       author: "Skripnik Dima",
       link: "/skripnik-dima",
       difficulty: "Intermediate",
