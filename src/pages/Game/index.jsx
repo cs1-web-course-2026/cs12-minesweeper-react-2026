@@ -58,6 +58,15 @@ function Game() {
       link: "#",
       difficulty: "Advanced",
       status: "Planning"
+    },
+    {
+      id: 5,
+      title: "Minesweeper on React",
+      description: "Minesweeper Implementation on the React framework",
+      author: "Rodion Barsukov",
+      link: "/barsukov-rodion",
+      difficulty: "Intermediate",
+      status: "Complete"
     }
   ]
 

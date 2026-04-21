@@ -1,0 +1,61 @@
+.gameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game {
+    background: #2b2b2b;
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    width: fit-content;
+}
+
+.gameHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+    background: #3a3a3a;
+    padding: 8px 12px;
+    border-radius: 2px;
+    border: 2px solid;
+    border-color: #1a1a1a #555 #555 #1a1a1a;
+}
+
+.headerItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #bbbbbb;
+    margin-bottom: 4px;
+}
+
+.value {
+    font-family: "Roboto Mono", Consolas, monospace;
+    font-size: 20px;
+    padding: 4px 8px;
+    background: #111;
+    color: #ff3333;
+    border: 1px solid #555;
+    min-width: 60px;
+    text-align: center;
+}
+
+.gameMain {
+    background: #3a3a3a;
+    padding: 8px;
+    border-radius: 2px;
+    border: 2px solid;
+    border-color: #555 #1a1a1a #1a1a1a #555;
+}
