@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Board from './components/Board';
 import { generateField } from './gameLogic';
-import './app.css';
+import './App.css';
 
 const App = () => {
   const ROWS = 9;
