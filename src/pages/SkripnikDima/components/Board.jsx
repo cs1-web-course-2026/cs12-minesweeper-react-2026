@@ -17,6 +17,8 @@ const Board = ({ field, onCellClick, onCellContext }) => {
             <Cell 
               key={`${rIdx}-${cIdx}`}
               data={cell}
+              row={rIdx} 
+              col={cIdx}
               onClick={() => onCellClick(rIdx, cIdx)}
               onContextMenu={(e) => {
                 e.preventDefault();
