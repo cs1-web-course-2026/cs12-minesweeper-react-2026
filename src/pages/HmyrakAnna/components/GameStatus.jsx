@@ -1,7 +1,7 @@
 import { GAME_STATUS } from '../constants';
 import styles from './GameStatus.module.css';
 
-function GameStatus({ gameStatus, minesRemaining, helpMessage }) {
+function GameStatus({ gameStatus, helpMessage }) {
   const getStatusMessage = () => {
     if (helpMessage) {
       return helpMessage;
