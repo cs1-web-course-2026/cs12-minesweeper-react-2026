@@ -47,6 +47,7 @@ export const openRecursive = (field ,row, col, rows, cols) => {
     for (let i = -1; i <= 1; i++) {
       for (let j = -1; j <= 1; j++) {
         openRecursive(field, row + i, col + j, rows, cols);
+      }
     }
   }
 };
