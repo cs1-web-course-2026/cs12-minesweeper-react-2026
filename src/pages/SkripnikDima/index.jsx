@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Board from './components/Board';
 import { generateField } from './gameLogic';
-import './App.css';
+import styles from './App.module.css';
 
 const App = () => {
   const ROWS = 9;
@@ -101,7 +101,7 @@ const App = () => {
   };
 
   return (
-    <div className="window">
+    <div className={styles.window}>
       <Header 
         time={gameState.gameTime} 
         status={gameState.status} 
