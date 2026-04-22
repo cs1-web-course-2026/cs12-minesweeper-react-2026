@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Cell.module.css';
 
-const Cell = ({ data, onClick, onContextMenu }) => {
+const Cell = ({ data, row, col, onClick, onContextMenu }) => {
   const { state, type, neighborMines } = data;
 
   const cellClass = `${styles.cell} ${state === 'opened' ? styles.opened : ''} ${
