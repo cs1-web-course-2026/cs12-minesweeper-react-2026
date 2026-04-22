@@ -17,6 +17,8 @@ const Cell = ({ data, onClick, onContextMenu }) => {
 
   return (
     <button
+      type="button"
+      aria-label={`Row ${row + 1}, column ${col + 1}, ${state}`}
       className={cellClass}
       onClick={onClick}
       onContextMenu={onContextMenu}
