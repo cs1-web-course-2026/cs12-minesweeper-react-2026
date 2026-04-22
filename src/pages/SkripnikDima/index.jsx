@@ -18,7 +18,7 @@ const App = () => {
     field: generateField(ROWS, COLS, MINES),
   });
 
-  const flagsCount = gameState.field.flat().filter(c => c.state === 'flagged').length;
+  const flagsCount = gameState.field.flat().filter(col => col.state === 'flagged').length;
 
   useEffect(() => {
     let interval;
@@ -41,16 +41,11 @@ const App = () => {
     });
   };
 
-  const checkWin = (field) => {
-    const closedCount = field.flat().filter(c => c.state !== 'opened').length;
-    return closedCount === MINES;
-  };
-
-  const handleCellClick = (r, c) => {
+  const handleCellClick = (row, col) => {
     if (gameState.status !== 'process') return;
     
     let newField = JSON.parse(JSON.stringify(gameState.field));
-    const cell = newField[r][c];
+    const cell = newField[row][col];
 
     if (cell.state !== 'closed') return;
 
@@ -62,21 +57,6 @@ const App = () => {
       return;
     }
 
-    const openRecursive = (row, col) => {
-      if (row < 0 || row >= ROWS || col < 0 || col >= COLS) return;
-      const target = newField[row][col];
-      if (target.state !== 'closed' || target.type === 'mine') return;
-
-      target.state = 'opened';
-      if (target.neighborMines === 0) {
-        for (let i = -1; i <= 1; i++) {
-          for (let j = -1; j <= 1; j++) openRecursive(row + i, col + j);
-        }
-      }
-    };
-
-    openRecursive(r, c);
-
     const isWin = checkWin(newField);
     setGameState(prev => ({ 
       ...prev, 
@@ -85,17 +65,17 @@ const App = () => {
     }));
   };
 
-  const handleCellContext = (r, c) => {
+  const handleCellContext = (row, col) => {
     if (gameState.status !== 'process') return;
 
     let newField = [...gameState.field];
-    const cell = { ...newField[r][c] };
+    const cell = { ...newField[row][col] };
 
     if (cell.state === 'opened') return;
 
     cell.state = cell.state === 'flagged' ? 'closed' : 'flagged';
-    newField[r] = [...newField[r]];
-    newField[r][c] = cell;
+    newField[row] = [...newField[row]];
+    newField[row][col] = cell;
 
     setGameState(prev => ({ ...prev, field: newField }));
   };
