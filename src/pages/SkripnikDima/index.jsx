@@ -28,7 +28,7 @@ const App = () => {
       }, 1000);
     }
     return () => clearInterval(interval);
-  }, [gameState.status]);
+  }, [gameState.status, gameState.gameTime]);
 
   const handleRestart = () => {
     setGameState({
