@@ -39,7 +39,7 @@ export const checkWin = (field, minesCount) => {
 
 export const openRecursive = (field ,row, col, rows, cols) => {
   if (row < 0 || row >= rows || col < 0 || col >= cols) return;
-  const target = newField[row][col];
+  const target = field[row][col];
   if (target.state !== 'closed' || target.type === 'mine') return;
 
   target.state = 'opened';
