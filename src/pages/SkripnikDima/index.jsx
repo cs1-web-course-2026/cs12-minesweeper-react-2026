@@ -22,13 +22,13 @@ const App = () => {
 
   useEffect(() => {
     let interval;
-    if (gameState.status === 'process' && gameState.gameTime < 999) {
+    if (gameState.status === 'process') {
       interval = setInterval(() => {
         setGameState(prev => ({ ...prev, gameTime: prev.gameTime + 1 }));
       }, 1000);
     }
     return () => clearInterval(interval);
-  }, [gameState.status, gameState.gameTime]);
+  }, [gameState.status]);
 
   const handleRestart = () => {
     setGameState({
@@ -57,7 +57,9 @@ const App = () => {
       return;
     }
 
-    const isWin = checkWin(newField);
+    openRecursive(newField, row, col, ROWS, COLS);
+
+    const isWin = checkWin(newField, MINES);
     setGameState(prev => ({ 
       ...prev, 
       field: newField, 
