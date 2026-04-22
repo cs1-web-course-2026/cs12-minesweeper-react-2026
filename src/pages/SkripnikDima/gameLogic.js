@@ -31,3 +31,23 @@ export const generateField = (rows, cols, minesCount) => {
   }
   return field;
 };
+
+export const checkWin = (field) => {
+  const closedCount = field.flat().filter(c => c.state !== 'opened').length;
+  return closedCount === MINES;
+};
+
+export const openRecursive = (row, col) => {
+  if (row < 0 || row >= ROWS || col < 0 || col >= COLS) return;
+  const target = newField[row][col];
+  if (target.state !== 'closed' || target.type === 'mine') return;
+
+  target.state = 'opened';
+  if (target.neighborMines === 0) {
+    for (let i = -1; i <= 1; i++) {
+      for (let j = -1; j <= 1; j++) openRecursive(row + i, col + j);
+    }
+  }
+};
+
+openRecursive(row, col);
