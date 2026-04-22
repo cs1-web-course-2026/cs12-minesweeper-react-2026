@@ -17,8 +17,8 @@ export const generateField = (rows, cols, minesCount) => {
     }
   }
 
-  for (let row = 0; row < rows; r++) {
-    for (let col = 0; col < cols; c++) {
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
       if (field[row][col].type === 'mine') continue;
       let count = 0;
       for (let i = -1; i <= 1; i++) {
@@ -32,22 +32,21 @@ export const generateField = (rows, cols, minesCount) => {
   return field;
 };
 
-export const checkWin = (field) => {
+export const checkWin = (field, minesCount) => {
   const closedCount = field.flat().filter(c => c.state !== 'opened').length;
-  return closedCount === MINES;
+  return closedCount === minesCount;
 };
 
-export const openRecursive = (row, col) => {
-  if (row < 0 || row >= ROWS || col < 0 || col >= COLS) return;
+export const openRecursive = (field ,row, col, rows, cols) => {
+  if (row < 0 || row >= rows || col < 0 || col >= cols) return;
   const target = newField[row][col];
   if (target.state !== 'closed' || target.type === 'mine') return;
 
   target.state = 'opened';
   if (target.neighborMines === 0) {
     for (let i = -1; i <= 1; i++) {
-      for (let j = -1; j <= 1; j++) openRecursive(row + i, col + j);
+      for (let j = -1; j <= 1; j++) {
+        openRecursive(field, row + i, col + j, rows, cols);
     }
   }
 };
-
-openRecursive(row, col);
