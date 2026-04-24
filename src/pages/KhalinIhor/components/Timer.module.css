@@ -1,0 +1,23 @@
+.statusPanel {
+    padding: 0.55rem 0.65rem;
+    border: 2px solid var(--panel-edge);
+    border-radius: 0.8rem;
+    background: rgba(255, 251, 241, 0.9);
+    text-align: center;
+}
+
+.statusLabel {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+}
+
+.statusValue {
+    font-family: 'Chivo Mono', 'Courier New', monospace;
+    font-size: clamp(1.2rem, 3.8vw, 1.55rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--accent-dark);
+}

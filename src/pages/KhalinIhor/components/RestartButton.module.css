@@ -1,0 +1,37 @@
+.startButton {
+    height: 100%;
+    min-height: 3.2rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--accent-dark);
+    border-radius: 0.9rem;
+    background: linear-gradient(180deg, #eb8f66, var(--accent));
+    color: #fffaf0;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        transform 0.16s ease,
+        box-shadow 0.16s ease,
+        filter 0.16s ease;
+}
+
+.startButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(139, 63, 31, 0.32);
+}
+
+.startButton:active {
+    transform: translateY(0);
+    filter: brightness(0.96);
+}
+
+.startButton:focus-visible {
+    outline: 3px solid #ffd67c;
+    outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+    .startButton {
+        min-height: 2.8rem;
+    }
+}

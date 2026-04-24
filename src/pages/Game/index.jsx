@@ -76,6 +76,15 @@ function Game() {
       link: "/barsukov-rodion",
       difficulty: "Intermediate",
       status: "Complete"
+    },
+    {
+      id: 7,
+      title: "Minesweeper",
+      description: "Minesweeper build on React framework.",
+      author: "Khalin Ihor",
+      link: "/khalin-ihor",
+      difficulty: "Intermediate",
+      status: "Complete"
     }
   ]
 
