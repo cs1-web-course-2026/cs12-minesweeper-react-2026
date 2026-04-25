@@ -97,13 +97,14 @@ export function calculateAdjacency(board) {
 }
 
 function floodFillReveal(board, startRow, startCol) {
-  const rows = board.length
-  const cols = board[0].length
+  const updatedBoard = cloneBoard(board)
+  const rows = updatedBoard.length
+  const cols = updatedBoard[0].length
   const stack = [[startRow, startCol]]
 
   while (stack.length > 0) {
     const [row, col] = stack.pop()
-    const currentCell = board[row][col]
+    const currentCell = updatedBoard[row][col]
 
     if (currentCell.state === CELL_STATE.OPEN || currentCell.state === CELL_STATE.FLAGGED) {
       continue
@@ -123,7 +124,7 @@ function floodFillReveal(board, startRow, startCol) {
         continue
       }
 
-      const neighbourCell = board[neighbourRow][neighbourCol]
+      const neighbourCell = updatedBoard[neighbourRow][neighbourCol]
       if (neighbourCell.state !== CELL_STATE.CLOSED) {
         continue
       }
@@ -131,23 +132,27 @@ function floodFillReveal(board, startRow, startCol) {
       stack.push([neighbourRow, neighbourCol])
     }
   }
+
+  return updatedBoard
 }
 
 export function revealCell(board, targetRow, targetCol) {
-  const updatedBoard = cloneBoard(board)
-  const targetCell = updatedBoard[targetRow][targetCol]
+  const targetCell = board[targetRow][targetCol]
 
   if (targetCell.state === CELL_STATE.FLAGGED || targetCell.state === CELL_STATE.OPEN) {
-    return { updatedBoard, didHitMine: false }
+    return { updatedBoard: cloneBoard(board), didHitMine: false }
   }
 
   if (targetCell.content === CELL_CONTENT.MINE) {
-    targetCell.state = CELL_STATE.OPEN
-    targetCell.exploded = true
+    const updatedBoard = cloneBoard(board)
+    const mineCell = updatedBoard[targetRow][targetCol]
+
+    mineCell.state = CELL_STATE.OPEN
+    mineCell.exploded = true
     return { updatedBoard, didHitMine: true }
   }
 
-  floodFillReveal(updatedBoard, targetRow, targetCol)
+  const updatedBoard = floodFillReveal(board, targetRow, targetCol)
   return { updatedBoard, didHitMine: false }
 }
 
