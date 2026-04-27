@@ -1,6 +1,6 @@
 import { useEffect, useReducer } from 'react';
 
-import { DEFAULT_CONFIG, GAME_STATUS } from '../constants.js';
+import { ACTION_TYPE, DEFAULT_CONFIG, GAME_STATUS } from '../constants.js';
 import { createInitialState, gameReducer } from '../logic.js';
 
 export default function useGameState(initialConfig = DEFAULT_CONFIG) {
@@ -12,7 +12,7 @@ export default function useGameState(initialConfig = DEFAULT_CONFIG) {
         }
 
         const intervalId = window.setInterval(() => {
-            dispatch({ type: 'TICK' });
+            dispatch({ type: ACTION_TYPE.TICK });
         }, 1000);
 
         return () => {
@@ -22,27 +22,22 @@ export default function useGameState(initialConfig = DEFAULT_CONFIG) {
 
     function openCell(row, col) {
         dispatch({
-            type: 'OPEN_CELL',
+            type: ACTION_TYPE.OPEN_CELL,
             payload: { row, col },
         });
     }
 
     function toggleFlag(row, col) {
         dispatch({
-            type: 'TOGGLE_FLAG',
+            type: ACTION_TYPE.TOGGLE_FLAG,
             payload: { row, col },
         });
     }
 
-    function restart(nextConfig) {
-        const isConfigObject =
-            nextConfig &&
-            typeof nextConfig === 'object' &&
-            !Object.prototype.hasOwnProperty.call(nextConfig, 'preventDefault');
-
+    function restart() {
         dispatch({
-            type: 'RESTART',
-            payload: isConfigObject ? nextConfig : undefined,
+            type: ACTION_TYPE.RESTART,
+            payload: initialConfig,
         });
     }
 

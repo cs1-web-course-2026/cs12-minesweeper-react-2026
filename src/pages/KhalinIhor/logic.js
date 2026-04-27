@@ -1,4 +1,5 @@
 import {
+    ACTION_TYPE,
     CELL_CONTENT,
     CELL_STATE,
     DEFAULT_CONFIG,
@@ -52,7 +53,7 @@ function countMinesInField(field) {
     return mines;
 }
 
-export function countNeighbourMines(field) {
+export function populateNeighbourMineCounts(field) {
     const rows = field.length;
     const cols = field[0]?.length ?? 0;
 
@@ -78,6 +79,8 @@ export function countNeighbourMines(field) {
             cell.neighbourMines = mines;
         }
     }
+
+    return field;
 }
 
 export function generateField(rows, cols, minesCount) {
@@ -99,8 +102,7 @@ export function generateField(rows, cols, minesCount) {
         }
     }
 
-    countNeighbourMines(field);
-    return field;
+    return populateNeighbourMineCounts(field);
 }
 
 function cloneField(field) {
@@ -176,7 +178,7 @@ export function createInitialState(config = DEFAULT_CONFIG) {
 
 export function gameReducer(state, action) {
     switch (action.type) {
-        case 'RESTART': {
+        case ACTION_TYPE.RESTART: {
             const nextConfig = action.payload ?? {
                 rows: state.rows,
                 cols: state.cols,
@@ -186,7 +188,7 @@ export function gameReducer(state, action) {
             return createInitialState(nextConfig);
         }
 
-        case 'OPEN_CELL': {
+        case ACTION_TYPE.OPEN_CELL: {
             if (state.status !== GAME_STATUS.PLAYING) {
                 return state;
             }
@@ -224,7 +226,7 @@ export function gameReducer(state, action) {
             };
         }
 
-        case 'TOGGLE_FLAG': {
+        case ACTION_TYPE.TOGGLE_FLAG: {
             if (state.status !== GAME_STATUS.PLAYING) {
                 return state;
             }
@@ -272,7 +274,7 @@ export function gameReducer(state, action) {
             return state;
         }
 
-        case 'TICK': {
+        case ACTION_TYPE.TICK: {
             if (state.status !== GAME_STATUS.PLAYING || !state.hasInteracted) {
                 return state;
             }

@@ -10,6 +10,13 @@ export const GAME_STATUS = Object.freeze({
     LOST: 'lost',
 });
 
+export const ACTION_TYPE = Object.freeze({
+    RESTART: 'RESTART',
+    OPEN_CELL: 'OPEN_CELL',
+    TOGGLE_FLAG: 'TOGGLE_FLAG',
+    TICK: 'TICK',
+});
+
 export const CELL_CONTENT = Object.freeze({
     MINE: 'mine',
     EMPTY: 'empty',

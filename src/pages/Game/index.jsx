@@ -80,7 +80,7 @@ function Game() {
     {
       id: 7,
       title: "Minesweeper",
-      description: "Minesweeper build on React framework.",
+      description: "Minesweeper built on React framework.",
       author: "Khalin Ihor",
       link: "/khalin-ihor",
       difficulty: "Intermediate",
