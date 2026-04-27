@@ -1,8 +1,19 @@
+export const CELL_STATE = {
+  CLOSED: 'closed',
+  OPENED: 'opened',
+  FLAGGED: 'flagged',
+};
+
+export const CELL_CONTENT = {
+  EMPTY: 'empty',
+  MINE: 'mine',
+};
+
 export const generateField = (rows, cols, minesCount) => {
   let field = Array.from({ length: rows }, () =>
     Array.from({ length: cols }, () => ({
-      type: 'empty',
-      state: 'closed',
+      type: CELL_CONTENT.EMPTY,
+      state: CELL_STATE.CLOSED,
       neighborMines: 0,
     }))
   );
@@ -11,19 +22,19 @@ export const generateField = (rows, cols, minesCount) => {
   while (minesPlaced < minesCount) {
     const row = Math.floor(Math.random() * rows);
     const col = Math.floor(Math.random() * cols);
-    if (field[row][col].type !== 'mine') {
-      field[row][col].type = 'mine';
+    if (field[row][col].type !== CELL_CONTENT.MINE) {
+      field[row][col].type = CELL_CONTENT.MINE;
       minesPlaced++;
     }
   }
 
   for (let row = 0; row < rows; row++) {
     for (let col = 0; col < cols; col++) {
-      if (field[row][col].type === 'mine') continue;
+      if (field[row][col].type === CELL_CONTENT.MINE) continue;
       let count = 0;
       for (let i = -1; i <= 1; i++) {
         for (let j = -1; j <= 1; j++) {
-          if (field[row + i]?.[col + j]?.type === 'mine') count++;
+          if (field[row + i]?.[col + j]?.type === CELL_CONTENT.MINE) count++;
         }
       }
       field[row][col].neighborMines = count;
@@ -40,9 +51,9 @@ export const checkWin = (field, minesCount) => {
 export const openRecursive = (field ,row, col, rows, cols) => {
   if (row < 0 || row >= rows || col < 0 || col >= cols) return;
   const target = field[row][col];
-  if (target.state !== 'closed' || target.type === 'mine') return;
+  if (target.state !== CELL_STATE.CLOSED || target.type === CELL_CONTENT.MINE) return;
 
-  target.state = 'opened';
+  target.state = CELL_STATE.OPENED;
   if (target.neighborMines === 0) {
     for (let i = -1; i <= 1; i++) {
       for (let j = -1; j <= 1; j++) {
