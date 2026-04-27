@@ -52,6 +52,14 @@ export default function Cell({ cell, row, col, status, explodedCell, onOpen, onF
     }
 
     const isDisabled = cell.state === CELL_STATE.OPEN || isGameOver;
+    const cellStateDescription =
+        cell.state === CELL_STATE.OPEN
+            ? isMine
+                ? 'open mine'
+                : cell.neighbourMines > 0
+                    ? `open ${cell.neighbourMines} neighbouring mines`
+                    : 'open empty'
+            : cell.state;
 
     return (
         <button
@@ -63,7 +71,7 @@ export default function Cell({ cell, row, col, status, explodedCell, onOpen, onF
                 event.preventDefault();
                 onFlag(row, col);
             }}
-            aria-label={`Row ${row + 1}, Col ${col + 1}`}
+            aria-label={`Row ${row + 1}, Col ${col + 1}, ${cellStateDescription}`}
         >{textContent}</button>
     );
 }
