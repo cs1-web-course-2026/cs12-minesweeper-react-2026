@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Board from './components/Board';
-import { generateField, checkWin, openRecursive } from './gameLogic';
+import { CELL_STATE, CELL_CONTENT, generateField, checkWin, openRecursive } from './gameLogic';
 import styles from './App.module.css';
 
 const App = () => {
