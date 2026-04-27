@@ -49,9 +49,9 @@ const App = () => {
 
     if (cell.state !== 'closed') return;
 
-    if (cell.type === 'mine') {
+    if (cell.type === CELL_CONTENT.MINE) {
       newField.forEach(row => row.forEach(cell => {
-        if (cell.type === 'mine') cell.state = 'opened';
+        if (cell.type === CELL_CONTENT.MINE) cell.state = CELL_STATE.OPENED;
       }));
       setGameState(prev => ({ ...prev, field: newField, status: 'lose' }));
       return;
@@ -73,9 +73,9 @@ const App = () => {
     let newField = [...gameState.field];
     const cell = { ...newField[row][col] };
 
-    if (cell.state === 'opened') return;
+    if (cell.state === CELL_STATE.OPENED) return;
 
-    cell.state = cell.state === 'flagged' ? 'closed' : 'flagged';
+    cell.state = cell.state === CELL_STATE.FLAGGED ? CELL_STATE.CLOSED : CELL_STATE.FLAGGED;;
     newField[row] = [...newField[row]];
     newField[row][col] = cell;
 
