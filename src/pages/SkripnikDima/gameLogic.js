@@ -32,9 +32,9 @@ export const generateField = (rows, cols, minesCount) => {
     for (let col = 0; col < cols; col++) {
       if (field[row][col].type === CELL_CONTENT.MINE) continue;
       let count = 0;
-      for (let i = -1; i <= 1; i++) {
-        for (let j = -1; j <= 1; j++) {
-          if (field[row + i]?.[col + j]?.type === CELL_CONTENT.MINE) count++;
+      for (let rowOffset = -1; rowOffset <= 1; rowOffset++) {
+        for (let colOffset = -1; colOffset <= 1; colOffset++) {
+          if (field[row + rowOffset]?.[col + colOffset]?.type === CELL_CONTENT.MINE) count++;
         }
       }
       field[row][col].neighborMines = count;
@@ -55,9 +55,9 @@ export const openRecursive = (field ,row, col, rows, cols) => {
 
   target.state = CELL_STATE.OPENED;
   if (target.neighborMines === 0) {
-    for (let i = -1; i <= 1; i++) {
-      for (let j = -1; j <= 1; j++) {
-        openRecursive(field, row + i, col + j, rows, cols);
+    for (let rowOffset = -1; rowOffset <= 1; rowOffset++) {
+      for (let colOffset = -1; colOffset <= 1; colOffset++) {
+        openRecursive(field, row + rowOffset, col + colOffset, rows, cols);
       }
     }
   }
