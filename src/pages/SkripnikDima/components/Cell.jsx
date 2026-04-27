@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Cell.module.css';
+import { CELL_STATE, CELL_CONTENT } from '../gameLogic'
 
 const Cell = ({ data, row, col, onClick, onContextMenu }) => {
   const { state, type, neighborMines } = data;
