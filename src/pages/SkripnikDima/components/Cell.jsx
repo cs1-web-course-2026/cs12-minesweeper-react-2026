@@ -4,14 +4,14 @@ import styles from './Cell.module.css';
 const Cell = ({ data, row, col, onClick, onContextMenu }) => {
   const { state, type, neighborMines } = data;
 
-  const cellClass = `${styles.cell} ${state === 'opened' ? styles.opened : ''} ${
-    state === 'opened' && type === 'mine' ? styles.mine : ''
+  const cellClass = `${styles.cell} ${state === CELL_STATE.OPENED ? styles.opened : ''} ${
+    state === CELL_STATE.OPENED && type === CELL_CONTENT.MINE ? styles.mine : ''
   }`;
 
   const renderContent = () => {
-    if (state === 'closed') return null;
-    if (state === 'flagged') return '🚩';
-    if (type === 'mine') return '💣';
+    if (state === CELL_STATE.CLOSED) return null;
+    if (state === CELL_STATE.FLAGGED) return '🚩';
+    if (type === CELL_CONTENT.MINE) return '💣';
     return neighborMines > 0 ? neighborMines : '';
   };
 
