@@ -78,11 +78,20 @@ function Game() {
       status: "Complete"
     },
     {
-      id: 6,
+      id: 7,
       title: "Minesweeper by Koryagin Nazar",
       description: "React implementation with component architecture and CSS Modules",
       author: "Nazar Koryagin",
       link: "/koryagin-nazar",
+      difficulty: "Intermediate",
+      status: "Complete"
+    },
+    {
+      id: 9,
+      title: "Minesweeper",
+      description: "Minesweeper built on React framework.",
+      author: "Khalin Ihor",
+      link: "/khalin-ihor",
       difficulty: "Intermediate",
       status: "Complete"
     }

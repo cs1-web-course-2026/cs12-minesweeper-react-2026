@@ -1,0 +1,6 @@
+.gameBoard {
+    display: grid;
+    grid-template-columns: repeat(var(--board-cols), var(--cell-size));
+    gap: var(--cell-gap);
+    justify-content: center;
+}
