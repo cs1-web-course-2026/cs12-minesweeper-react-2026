@@ -78,7 +78,7 @@ function Game() {
       status: "Complete"
     },
     {
-      id: 7,
+      id: 9,
       title: "Minesweeper",
       description: "Minesweeper built on React framework.",
       author: "Khalin Ihor",
