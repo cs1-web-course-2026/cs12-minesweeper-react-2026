@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@400;700&family=Lexend:wght@400;500;600;700&display=swap');
+
+.gameShell {
+    --bg-top: #f4efe0;
+    --bg-bottom: #d8e9dc;
+    --panel-edge: #2f4946;
+    --text-main: #1f3130;
+    --text-soft: #5e7070;
+    --accent: #bf5f39;
+    --accent-dark: #8c3c1f;
+    --safe-green: #6f927f;
+    --safe-green-dark: #3e6151;
+    --open-cell: #e8deca;
+    --open-cell-top: #f5efdf;
+    --mine-dark: #2f3a3a;
+    --mine-hit: #d34136;
+    --mine-hit-light: #f47e66;
+    --board-cols: 10;
+    --cell-size: clamp(2rem, 7vw, 2.8rem);
+    --cell-gap: clamp(0.22rem, 1.1vw, 0.38rem);
+    box-sizing: border-box;
+    font-family: 'Lexend', 'Trebuchet MS', sans-serif;
+    width: min(46rem, 100%);
+    margin: 0 auto;
+    padding: clamp(1rem, 2vw, 1.35rem);
+    border: 3px solid var(--panel-edge);
+    border-radius: 1rem;
+    color: var(--text-main);
+    background: linear-gradient(180deg, rgba(249, 244, 231, 0.97), rgba(237, 227, 204, 0.96));
+    box-shadow: 0 1.1rem 2.2rem rgba(26, 42, 40, 0.2);
+    animation: slideUp 0.55s ease-out;
+}
+
+.gameHeader {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0.9rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.boardWrap {
+    border: 2px solid var(--panel-edge);
+    border-radius: 0.9rem;
+    padding: 0.9rem;
+    background: rgba(232, 222, 202, 0.58);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 640px) {
+    .gameHeader {
+        grid-template-columns: 1fr;
+    }
+
+    .boardWrap {
+        padding: 0.65rem;
+    }
+}
