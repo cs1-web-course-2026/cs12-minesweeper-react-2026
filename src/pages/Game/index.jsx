@@ -83,6 +83,15 @@ function Game() {
       description: "Minesweeper adaptated to React",
       author: "Skripnik Dima",
       link: "/skripnik-dima",
+      difficulty: "Beginner",
+      status: "Complete"
+    },
+    {
+      id: 6,
+      title: "Minesweeper by Koryagin Nazar",
+      description: "React implementation with component architecture and CSS Modules",
+      author: "Nazar Koryagin",
+      link: "/koryagin-nazar",
       difficulty: "Intermediate",
       status: "Complete"
     }

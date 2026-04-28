@@ -1,0 +1,16 @@
+.status {
+  min-height: 1.5rem;
+  margin: 0;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #314159;
+}
+
+.won {
+  color: #1f8542;
+}
+
+.lost {
+  color: #b73131;
+}

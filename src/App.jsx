@@ -7,6 +7,7 @@ import MockGame from './pages/MockGame'
 import HmyrakAnna from './pages/HmyrakAnna'
 import BarsukovRodion from './pages/BarsukovRodion'
 import SkripnikDima from './pages/SkripnikDima'
+import KoryaginNazar from './pages/KoryaginNazar'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="hmyrak-anna" element={<HmyrakAnna />} />
         <Route path="barsukov-rodion" element={<BarsukovRodion />} />
         <Route path="skripnik-dima" element={<SkripnikDima />} />
+        <Route path="koryagin-nazar" element={<KoryaginNazar />} />
       </Route>
     </Routes>
   )
