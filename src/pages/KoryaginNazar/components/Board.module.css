@@ -1,0 +1,22 @@
+.board {
+  --cell-size: 2.2rem;
+
+  box-sizing: border-box;
+  display: grid;
+  width: fit-content;
+  grid-template-columns: repeat(var(--board-columns), var(--cell-size));
+  gap: 0.2rem;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0.55rem;
+  border-radius: 0.7rem;
+  background: linear-gradient(150deg, #dbe8f5 0%, #c7dae8 100%);
+  border: 1px solid #9cb4c8;
+}
+
+@media (max-width: 36rem) {
+  .board {
+    --cell-size: 1.95rem;
+    gap: 0.16rem;
+  }
+}
