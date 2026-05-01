@@ -1,0 +1,11 @@
+.boardContainer {
+    border-top: 3px solid #808080;
+    border-left: 3px solid #808080;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+}
+
+.board {
+    display: grid;
+    background-color: #808080;
+}
