@@ -103,6 +103,15 @@ function Game() {
       link: "/khalin-ihor",
       difficulty: "Intermediate",
       status: "Complete"
+    },
+    {
+      id: 10,
+      title: "Zavaliaiev Mykhailo's Minesweeper",
+      description: "Ultra-hard 25 x 25 React Minesweeper with 120 mines, first-click safety, timer, flags, win and loss states, and CSS Modules styling.",
+      author: "Zavaliaiev Mykhailo",
+      link: "/zavaliaiev-mykhailo",
+      difficulty: "Advanced",
+      status: "Complete"
     }
   ]
 
