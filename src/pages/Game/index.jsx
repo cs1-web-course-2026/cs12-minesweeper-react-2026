@@ -103,6 +103,15 @@ function Game() {
       link: "/khalin-ihor",
       difficulty: "Intermediate",
       status: "Complete"
+    },
+    {
+  id: 10,
+  title: "Minesweeper by Pahi Eduard",
+  description: "Minesweeper built on React.",
+  author: "Pahi Eduard",
+  link: "/pahi-eduard",
+  difficulty: "Intermediate",
+  status: "Complete"
     }
   ]
 
