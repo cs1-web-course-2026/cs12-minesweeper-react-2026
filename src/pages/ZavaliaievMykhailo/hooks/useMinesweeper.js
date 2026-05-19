@@ -41,6 +41,11 @@ export function useMinesweeper(config = GAME_CONFIG) {
           return currentGame
         }
 
+        const targetCell = currentGame.board[row]?.[col]
+        if (targetCell?.state !== CELL_STATE.HIDDEN) {
+          return currentGame
+        }
+
         const boardWithMines =
           currentGame.status === GAME_STATE.READY
             ? addMines(currentGame.board, config.mines, row, col)

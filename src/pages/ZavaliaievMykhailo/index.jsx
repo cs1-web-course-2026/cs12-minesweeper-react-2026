@@ -24,7 +24,7 @@ export default function ZavaliaievMykhailo() {
   const seconds = useTimer(status === GAME_STATE.RUNNING, resetKey)
 
   return (
-    <div className={styles.page}>
+    <main className={styles.page}>
       <section className={styles.panel} aria-label="Zavaliaiev Mykhailo Minesweeper">
         <header className={styles.header}>
           <div className={styles.counter}>
@@ -53,6 +53,6 @@ export default function ZavaliaievMykhailo() {
           </p>
         </footer>
       </section>
-    </div>
+    </main>
   )
 }
