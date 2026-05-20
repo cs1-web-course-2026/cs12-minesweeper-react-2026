@@ -103,6 +103,15 @@ function Game() {
       link: "/khalin-ihor",
       difficulty: "Intermediate",
       status: "Complete"
+    },
+    {
+      id: 10,
+      title: "Minesweeper no AI",
+      description: "Minesweeper Implementation on the React framework and no AI",
+      author: "Lohvynenko Roman",
+      link: "/lohvynenko-roman",
+      difficulty: "senior",
+      status: "Complete"
     }
   ]
 

@@ -1,0 +1,38 @@
+.gameContainer {
+  display: inline-block;
+  background-color: #bdbdbd;
+  padding: 10px;
+  border: 3px solid;
+  border-color: #fff #7b7b7b #7b7b7b #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid;
+  border-color: #7b7b7b #fff #fff #7b7b7b;
+  margin-bottom: 10px;
+  background-color: #000;
+}
+
+.counter {
+  color: red;
+  font-family: monospace;
+  font-size: 24px;
+}
+
+.restartBtn {
+  font-size: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 2px solid;
+  border-color: #fff #7b7b7b #7b7b7b #fff;
+  background-color: #bdbdbd;
+}
+
+.restartBtn:active {
+  border-color: #7b7b7b #fff #fff #7b7b7b;
+}

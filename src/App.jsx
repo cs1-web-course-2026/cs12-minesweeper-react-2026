@@ -9,6 +9,7 @@ import BarsukovRodion from './pages/BarsukovRodion'
 import SkripnikDima from './pages/SkripnikDima'
 import KoryaginNazar from './pages/KoryaginNazar'
 import KhalinIhor from './pages/KhalinIhor'
+import LohvynenkoRoman from './pages/LohvynenkoRoman/LohvynenkoRoman'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="skripnik-dima" element={<SkripnikDima />} />
         <Route path="koryagin-nazar" element={<KoryaginNazar />} />
         <Route path="khalin-ihor" element={<KhalinIhor />} />
+        <Route path="lohvynenko-roman" element={<LohvynenkoRoman />} />
       </Route>
     </Routes>
   )
