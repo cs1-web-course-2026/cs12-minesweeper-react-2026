@@ -1,7 +1,6 @@
 import styles from './Cell.module.css'
+import { CELL_STATE, CELL_TYPE } from '../constants'
 
-const CELL_STATE = { CLOSED: 'closed', OPENED: 'opened', FLAGGED: 'flagged' }
-const CELL_TYPE = { MINE: 'mine' }
 const NUM_STYLES = ['', styles.n1, styles.n2, styles.n3, styles.n4, styles.n5, styles.n6, styles.n7, styles.n8]
 
 function Cell({ cell, row, col, onClick, onRightClick }) {

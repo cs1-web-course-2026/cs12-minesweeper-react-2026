@@ -1,9 +1,6 @@
 import Cell from './Cell'
 import styles from './Board.module.css'
-
-const GAME_STATUS = { LOSE: 'lose' }
-const CELL_TYPE = { MINE: 'mine' }
-const CELL_STATE = { CLOSED: 'closed' }
+import { GAME_STATUS, CELL_TYPE, CELL_STATE } from '../constants'
 
 function Board({ field, status, onCellClick, onCellRightClick }) {
   return (

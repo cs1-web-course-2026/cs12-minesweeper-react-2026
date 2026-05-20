@@ -1,6 +1,6 @@
 import { CELL_TYPE, CELL_STATE } from '../constants'
 
-export function generateField(rows, cols, minesCount) {
+export function generateField(rows, cols, minesCount, safeCell = null) {
   const field = []
   for (let row = 0; row < rows; row++) {
     field[row] = []
@@ -18,10 +18,10 @@ export function generateField(rows, cols, minesCount) {
   while (placed < minesCount) {
     const row = Math.floor(Math.random() * rows)
     const col = Math.floor(Math.random() * cols)
-    if (field[row][col].type !== CELL_TYPE.MINE) {
-      field[row][col].type = CELL_TYPE.MINE
-      placed++
-    }
+    if (field[row][col].type === CELL_TYPE.MINE) continue
+    if (safeCell && safeCell.row === row && safeCell.col === col) continue
+    field[row][col].type = CELL_TYPE.MINE
+    placed++
   }
 
   for (let row = 0; row < rows; row++) {

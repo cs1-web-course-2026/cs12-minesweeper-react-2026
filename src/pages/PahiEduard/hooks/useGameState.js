@@ -7,6 +7,7 @@ export function useGameState() {
   const [status, setStatus] = useState(GAME_STATUS.PROCESS)
   const [time, setTime] = useState(0)
   const [timerActive, setTimerActive] = useState(false)
+  const [firstClick, setFirstClick] = useState(true)
 
   useEffect(() => {
     if (!timerActive) return
@@ -21,13 +22,22 @@ export function useGameState() {
     setStatus(GAME_STATUS.PROCESS)
     setTime(0)
     setTimerActive(false)
+    setFirstClick(true)
   }, [])
 
   const openCell = useCallback((row, col) => {
     if (status !== GAME_STATUS.PROCESS) return
-    if (!timerActive) setTimerActive(true)
 
-    const newField = field.map(r => r.map(c => ({ ...c })))
+    let currentField = field
+
+    if (firstClick) {
+      const safeField = generateField(ROWS, COLS, MINES_COUNT, { row, col })
+      setFirstClick(false)
+      setTimerActive(true)
+      currentField = safeField
+    }
+
+    const newField = currentField.map(r => r.map(c => ({ ...c })))
     const cell = newField[row][col]
 
     if (cell.state === CELL_STATE.OPENED || cell.state === CELL_STATE.FLAGGED) return
@@ -49,7 +59,7 @@ export function useGameState() {
     }
 
     setField(newField)
-  }, [field, status, timerActive])
+  }, [field, status, firstClick])
 
   const toggleFlag = useCallback((row, col) => {
     if (status !== GAME_STATUS.PROCESS) return
@@ -58,10 +68,11 @@ export function useGameState() {
     const cell = newField[row][col]
 
     if (cell.state === CELL_STATE.OPENED) return
+    if (cell.state === CELL_STATE.CLOSED && flagsLeft <= 0) return
 
     cell.state = cell.state === CELL_STATE.CLOSED ? CELL_STATE.FLAGGED : CELL_STATE.CLOSED
     setField(newField)
-  }, [field, status])
+  }, [field, status, flagsLeft])
 
   return { field, status, time, flagsLeft, restart, openCell, toggleFlag }
 }
