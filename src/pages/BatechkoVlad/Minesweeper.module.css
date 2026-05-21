@@ -1,0 +1,112 @@
+.gameWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  background-color: #242424;
+  font-family: monospace;
+}
+
+.minesweeperContainer {
+  background-color: #bdbdbd;
+  border: 3px solid;
+  border-color: #fff #7b7b7b #7b7b7b #fff;
+  padding: 6px;
+  user-select: none;
+}
+
+.gameHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #bdbdbd;
+  border: 3px solid;
+  border-color: #7b7b7b #fff #fff #7b7b7b;
+  padding: 4px 8px;
+  margin-bottom: 6px;
+}
+
+.digitDisplay {
+  background-color: #000;
+  color: #ff0000;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 2px 5px;
+  border: 1px solid #7b7b7b;
+  min-width: 40px;
+  text-align: center;
+}
+
+.resetBtn {
+  font-size: 24px;
+  width: 36px;
+  height: 36px;
+  background-color: #bdbdbd;
+  border: 3px solid;
+  border-color: #fff #7b7b7b #7b7b7b #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+.resetBtn:active {
+  border-color: #7b7b7b #fff #fff #7b7b7b;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 25px);
+  grid-template-rows: repeat(10, 25px);
+  gap: 0;
+  border: 3px solid;
+  border-color: #7b7b7b #fff #fff #7b7b7b;
+}
+
+.cell {
+  width: 25px;
+  height: 25px;
+  background-color: #bdbdbd;
+  border: 3px solid;
+  border-color: #fff #7b7b7b #7b7b7b #fff;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cell:active:not(.open):not(.flag) {
+  border: 1px solid #7b7b7b;
+}
+
+.open {
+  background-color: #d9d9d9;
+  border: 1px solid #7b7b7b !important;
+}
+
+.exploded {
+  background-color: #ff0000 !important;
+  border: 1px solid #7b7b7b !important;
+}
+
+.mine {
+  background-color: #d9d9d9;
+  border: 1px solid #7b7b7b !important;
+}
+
+.flag {
+  background-color: #bdbdbd;
+}
+
+.count_1 { color: blue; }
+.count_2 { color: green; }
+.count_3 { color: red; }
+.count_4 { color: darkblue; }
+.count_5 { color: maroon; }
+.count_6 { color: turquoise; }
+.count_7 { color: black; }
+.count_8 { color: gray; }
