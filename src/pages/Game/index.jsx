@@ -103,7 +103,16 @@ function Game() {
       link: "/khalin-ihor",
       difficulty: "Intermediate",
       status: "Complete"
-    }
+    },
+    {
+  "id": 10,
+  "title": "Minesweeper",
+  "description": "Minesweeper built on React framework.",
+  "author": "Batechko Vlad",
+  "link": "/batechko-vlad",
+  "difficulty": "Intermediate",
+  "status": "Complete"
+}
   ]
 
   return (
