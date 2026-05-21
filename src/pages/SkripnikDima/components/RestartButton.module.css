@@ -1,0 +1,24 @@
+.smileyBtn {
+  border-radius: 0 !important;
+  background-color: #c0c0c0 !important;
+  transform: none !important;
+  transition: none !important;
+  width: 36px !important;
+  height: 36px !important;
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-top: 2px solid #fff !important;
+  border-left: 2px solid #fff !important;
+  border-bottom: 2px solid #808080 !important;
+  border-right: 2px solid #808080 !important;
+}
+
+.smileyBtn:active {
+  border-top: 2px solid #808080 !important;
+  border-left: 2px solid #808080 !important;
+  border-bottom: 2px solid #fff !important;
+  border-right: 2px solid #fff !important;
+}

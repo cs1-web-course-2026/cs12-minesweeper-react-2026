@@ -1,0 +1,13 @@
+.gameStatus {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.win {
+    color: #33ff66;
+}
+
+.lose {
+    color: #ff4444;
+}

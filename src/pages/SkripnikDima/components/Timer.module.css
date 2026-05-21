@@ -1,0 +1,15 @@
+.lcd {
+  background-color: black !important;
+  color: #ff0000 !important;
+  font-family: 'Courier New', Courier, monospace !important;
+  font-size: 28px !important;
+  font-weight: bold !important;
+  padding: 2px 8px !important;
+  
+  border: 2px solid !important;
+  border-color: #808080 #fff #fff #808080 !important;
+  
+  width: 65px;
+  text-align: center;
+  display: inline-block;
+}

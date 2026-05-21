@@ -1,0 +1,46 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: #c0c0c0;
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    margin-bottom: 10px;
+}
+
+.lcd {
+    background-color: black;
+    color: red;
+    font-family: 'Courier New', monospace;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 2px 5px;
+    border: 1px solid #808080;
+    width: 60px;
+    text-align: center;
+}
+
+.smileyBtn {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    background-color: #c0c0c0;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #808080;
+    border-right: 2px solid #808080;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.smileyBtn:active {
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+}

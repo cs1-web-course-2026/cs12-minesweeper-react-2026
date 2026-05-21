@@ -1,0 +1,135 @@
+.cellButton {
+  appearance: none;
+  background: transparent;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  line-height: 1;
+  vertical-align: top;
+}
+
+.cellButton:focus-visible {
+  outline: 2px solid rgb(28, 97, 224);
+  outline-offset: -2px;
+}
+
+.closedCell {
+  width: 25px;
+  height: 25px;
+  background-color: rgb(189, 187, 187);
+  border: 3px solid;
+  border-color: #dddddd #837f7f #837f7f #dddddd;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.closedCell:hover {
+  border-color: #837f7f #dddddd #dddddd #837f7f;
+}
+
+.openCell {
+  width: 26.5px;
+  height: 26.5px;
+  background-color: rgb(200, 196, 196);
+  border: 2px solid;
+  border-color: #837f7f #dddddd #dddddd #837f7f;
+}
+
+.num1::before,
+.num2::before,
+.num3::before,
+.num4::before,
+.num5::before,
+.num6::before,
+.num7::before,
+.num8::before {
+  font-size: 25px;
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+}
+
+.num1::before {
+  color: blue;
+  content: '1';
+}
+
+.num2::before {
+  color: green;
+  content: '2';
+}
+
+.num3::before {
+  color: red;
+  content: '3';
+}
+
+.num4::before {
+  color: navy;
+  content: '4';
+}
+
+.num5::before {
+  color: maroon;
+  content: '5';
+}
+
+.num6::before {
+  color: teal;
+  content: '6';
+}
+
+.num7::before {
+  color: black;
+  content: '7';
+}
+
+.num8::before {
+  color: gray;
+  content: '8';
+}
+
+.flag::before,
+.flagBang::before,
+.mine::before,
+.mineBang::before {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flag::before {
+  content: '🚩';
+  background-color: rgb(189, 187, 187);
+  border: 3px solid;
+  border-color: #dddddd #837f7f #837f7f #dddddd;
+  border-radius: 3px;
+}
+
+.flagBang::before {
+  content: '🚩';
+  background-color: rgb(213, 5, 5);
+  border: 1px solid;
+  border-color: rgb(213, 5, 5);
+}
+
+.mine::before {
+  content: '💣';
+  background-color: rgb(200, 196, 196);
+  border: 2px solid;
+  border-color: #837f7f #dddddd #dddddd #837f7f;
+}
+
+.mineBang::before {
+  content: '💣';
+  background-color: rgb(213, 5, 5);
+  border: 1px solid;
+  border-color: rgb(213, 5, 5);
+}

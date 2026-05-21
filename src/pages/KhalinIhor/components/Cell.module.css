@@ -1,0 +1,125 @@
+.cell {
+    position: relative;
+    width: var(--cell-size);
+    aspect-ratio: 1 / 1;
+    border: none;
+    padding: 0;
+    border-radius: 0.52rem;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-family: 'Chivo Mono', 'Courier New', monospace;
+    font-size: clamp(0.92rem, 3vw, 1.2rem);
+    font-weight: 700;
+    line-height: 1;
+    transition:
+        transform 0.14s ease,
+        filter 0.14s ease;
+}
+
+.cell:disabled {
+    cursor: default;
+}
+
+.cell:focus-visible {
+    outline: 3px solid #ffd67c;
+    outline-offset: 2px;
+}
+
+.cellClosed {
+    background: linear-gradient(165deg, #8db7a0, var(--safe-green));
+    box-shadow:
+        inset 0 2px 0 rgba(244, 255, 249, 0.44),
+        0 3px 0 var(--safe-green-dark);
+    cursor: pointer;
+}
+
+.cellClosed:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.cellOpen {
+    background: linear-gradient(165deg, var(--open-cell-top), var(--open-cell));
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.46),
+        0 0 0 1px rgba(35, 58, 57, 0.2);
+    color: #223333;
+    cursor: default;
+}
+
+.cellFlag {
+    color: #fdf7e6;
+}
+
+.cellMine,
+.cellMineHit {
+    color: #f6efe2;
+}
+
+.cellMine {
+    background: linear-gradient(170deg, #49595a, var(--mine-dark));
+}
+
+.cellMineHit {
+    background: linear-gradient(170deg, var(--mine-hit-light), var(--mine-hit));
+    animation: hitPulse 0.95s ease-in-out infinite alternate;
+}
+
+.cellWrong {
+    background: linear-gradient(165deg, #b96b63, #a04e45);
+    box-shadow:
+        inset 0 2px 0 rgba(255, 236, 233, 0.44),
+        0 3px 0 #6d312c;
+}
+
+.cellWrong::after {
+    content: 'x';
+    position: absolute;
+    right: 22%;
+    top: 60%;
+    transform: translateY(-50%);
+    color: #2a130f;
+    font-size: 0.72em;
+    font-weight: 700;
+}
+
+.cellN1 {
+    color: #1f6399;
+}
+
+.cellN2 {
+    color: #256c36;
+}
+
+.cellN3 {
+    color: #a53939;
+}
+
+.cellN4 {
+    color: #5f2e8f;
+}
+
+.cellN5 {
+    color: #8a4c1f;
+}
+
+.cellN6 {
+    color: #1c6f73;
+}
+
+.cellN7 {
+    color: #273b5b;
+}
+
+.cellN8 {
+    color: #37474f;
+}
+
+@keyframes hitPulse {
+    from {
+        box-shadow: 0 0 0 rgba(220, 63, 54, 0.25);
+    }
+    to {
+        box-shadow: 0 0 0.8rem rgba(220, 63, 54, 0.45);
+    }
+}
