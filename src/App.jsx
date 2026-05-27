@@ -10,6 +10,7 @@ import SkripnikDima from './pages/SkripnikDima'
 import KoryaginNazar from './pages/KoryaginNazar'
 import KhalinIhor from './pages/KhalinIhor'
 import ZavaliaievMykhailo from './pages/ZavaliaievMykhailo'
+import PahiEduard from './pages/PahiEduard'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="koryagin-nazar" element={<KoryaginNazar />} />
         <Route path="khalin-ihor" element={<KhalinIhor />} />
         <Route path="zavaliaiev-mykhailo" element={<ZavaliaievMykhailo />} />
+        <Route path="pahi-eduard" element={<PahiEduard />} />
       </Route>
     </Routes>
   )

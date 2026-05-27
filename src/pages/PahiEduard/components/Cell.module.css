@@ -1,0 +1,66 @@
+.cell {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.closed {
+  background-color: #2a4a8a;
+  border: 2px solid;
+  border-color: #4a72c0 #0d1f40 #0d1f40 #4a72c0;
+}
+
+.closed:hover {
+  background-color: #3a5aaa;
+}
+
+.open {
+  background-color: #0f1e3d;
+  border: 1px solid #1a1a50;
+  cursor: default;
+}
+
+.flag {
+  background-color: #2a4a8a;
+  border: 2px solid;
+  border-color: #4a72c0 #0d1f40 #0d1f40 #4a72c0;
+  cursor: default;
+  font-size: 24px;
+}
+
+.mine {
+  background-color: #c0392b;
+  border: 1px solid #8b2020;
+  cursor: default;
+  font-size: 24px;
+}
+
+.mineHit {
+  background-color: #e74c3c;
+  border: 1px solid #8b2020;
+  cursor: default;
+  font-size: 24px;
+  animation: blink 0.8s infinite alternate;
+}
+
+.n1 { color: #00b3ff; }
+.n2 { color: #01ff09; }
+.n3 { color: #ff0000; }
+.n4 { color: #1104a4; }
+.n5 { color: #682902; }
+.n6 { color: #2ec4b6; }
+.n7 { color: #888; }
+.n8 { color: #fdfdff; }
+
+@keyframes blink {
+  from { background-color: #e74c3c; }
+  to   { background-color: #ff6b6b; }
+}
