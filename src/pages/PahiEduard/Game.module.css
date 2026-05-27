@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.game {
+  background-color: #16213e;
+  border: 3px solid #4a72c0;
+  padding: 12px;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f3460;
+  border: 2px solid #4a72c0;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+}
+
+.counter {
+  background-color: #000;
+  border: 2px solid #4a72c0;
+  padding: 4px 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff4444;
+  letter-spacing: 2px;
+  min-width: 80px;
+}
