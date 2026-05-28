@@ -9,8 +9,7 @@ import BarsukovRodion from './pages/BarsukovRodion'
 import SkripnikDima from './pages/SkripnikDima'
 import KoryaginNazar from './pages/KoryaginNazar'
 import KhalinIhor from './pages/KhalinIhor'
-import ZavaliaievMykhailo from './pages/ZavaliaievMykhailo'
-import PahiEduard from './pages/PahiEduard'
+import FomenkoHalyna from './pages/FomenkoHalyna';
 
 function App() {
   return (
@@ -25,8 +24,7 @@ function App() {
         <Route path="skripnik-dima" element={<SkripnikDima />} />
         <Route path="koryagin-nazar" element={<KoryaginNazar />} />
         <Route path="khalin-ihor" element={<KhalinIhor />} />
-        <Route path="zavaliaiev-mykhailo" element={<ZavaliaievMykhailo />} />
-        <Route path="pahi-eduard" element={<PahiEduard />} />
+        <Route path="fomenko-halyna" element={<FomenkoHalyna />} />
       </Route>
     </Routes>
   )
