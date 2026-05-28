@@ -21,6 +21,9 @@ export default function MinesweeperGame() {
   const [board, setBoard] = useState([]);
   const [status, setStatus] = useState('idle'); // idle, playing, won, lost
   const [flagsLeft, setFlagsLeft] = useState(MINES);
+  
+  // 1. ДОБАВЛЕНО: Стейт для лічильника рестартів
+  const [resetCount, setResetCount] = useState(0);
 
   // Ініціалізація гри
   const initGame = useCallback(() => {
@@ -56,6 +59,9 @@ export default function MinesweeperGame() {
     setBoard(newBoard);
     setStatus('playing');
     setFlagsLeft(MINES);
+    
+    // 2. ДОБАВЛЕНО: Сигнал про те, що відбувся рестарт
+    setResetCount(prev => prev + 1);
   }, []);
 
   useEffect(() => {
@@ -143,7 +149,9 @@ export default function MinesweeperGame() {
       <div className={styles.header}>
         <div className={styles.counter}>{String(flagsLeft).padStart(3, '0')}</div>
         <RestartButton status={status} onRestart={initGame} />
-        <Timer status={status} />
+        
+        {/* 3. ДОБАВЛЕНО: Передаємо сигнал скидання в Таймер */}
+        <Timer status={status} resetSignal={resetCount} />
       </div>
       <Board 
         boardData={board} 
