@@ -1,9 +1,0 @@
-.board {
-  display: grid;
-  grid-template-columns: repeat(9, 40px);
-  grid-template-rows: repeat(9, 40px);
-  gap: 2px;
-  background-color: #0f1e3d;
-  border: 2px solid #4a72c0;
-  padding: 4px;
-}
